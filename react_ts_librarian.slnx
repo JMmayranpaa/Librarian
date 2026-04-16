@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="terraform/main.tf" />
+    <File Path="terraform/outputs.tf" />
+    <File Path="terraform/terraform.tfvars" />
+    <File Path="terraform/variables.tf" />
+  </Folder>
+  <Project Path="react_ts_librarian.client/react_ts_librarian.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="react_ts_librarian.Server/react_ts_librarian.Server.csproj" />
+</Solution>
