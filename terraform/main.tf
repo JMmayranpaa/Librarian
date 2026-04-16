@@ -34,14 +34,17 @@ resource "azurerm_linux_web_app" "app" {
   service_plan_id     = azurerm_service_plan.asp.id
 
   site_config {
+    # Käytetään Docker-konttia .NET 10:lle
     application_stack {
-        dotnet_version = "8.0" 
+      docker_image_name   = "mcr.microsoft.com/dotnet/aspnet:10.0"
+      docker_registry_url = "https://mcr.microsoft.com"
     }
     always_on = false
   }
 
   app_settings = {
     "ASPNETCORE_ENVIRONMENT" = "Production"
+    "WEBSITES_ENABLE_APP_SERVICE_STORAGE" = "false"
   }
 
   connection_string {
